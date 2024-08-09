@@ -7,22 +7,23 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import ProgramScreen from './screens/ProgramScreen';
 import ProgramDetailsScreen from './screens/ProgramDetailsScreen';
+import { RootStackParamList } from './types/rootStackParamsList';
 
-const Stack = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
     <>
       <StatusBar style="auto" />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Program" component={ProgramScreen} />
-          <Stack.Screen
+        <RootStack.Navigator>
+          <RootStack.Screen name="Home" component={HomeScreen} />
+          <RootStack.Screen name="Program" component={ProgramScreen} />
+          <RootStack.Screen
             name="ProgramDetails"
             component={ProgramDetailsScreen}
           />
-        </Stack.Navigator>
+        </RootStack.Navigator>
       </NavigationContainer>
     </>
   );
