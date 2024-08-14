@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 24,
   },
   text: {
     fontFamily: Fonts.oswald400,

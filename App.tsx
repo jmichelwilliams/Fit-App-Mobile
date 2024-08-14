@@ -14,6 +14,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProgramScreen from './screens/ProgramScreen';
 import ProgramDetailsScreen from './screens/ProgramDetailsScreen';
 import { RootStackParamList } from './types/RootStackParamsList';
+import HistoryScreen from './screens/HistoryScreen';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -49,6 +50,7 @@ const App = () => {
             name="ProgramDetails"
             component={ProgramDetailsScreen}
           />
+          <RootStack.Screen name="History" component={HistoryScreen} />
         </RootStack.Navigator>
       </NavigationContainer>
     </>

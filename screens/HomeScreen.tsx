@@ -6,13 +6,16 @@ import muscleUp from '../assets/muscleUp.png';
 import { Colors } from '../constants/colors';
 import { Fonts } from '../constants/fonts';
 import Button from '../components/UI/Button';
+
 interface HomeScreenProps {
   navigation: HomeScreenNavigationProp;
 }
 
+type RouteNames = 'Home' | 'Program' | 'ProgramDetails' | 'History';
+
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
-  const handleNavigate = () => {
-    navigation.navigate('Program');
+  const handleNavigate = (route: RouteNames) => {
+    navigation.navigate(route);
   };
 
   return (
@@ -27,7 +30,9 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
           to help you!
         </Text>
         <View style={styles.buttonContainer}>
-          <Button onPress={handleNavigate}>PLANNER</Button>
+          <Button onPress={() => handleNavigate('Program')}>PLANNER</Button>
+          <Button onPress={() => handleNavigate('Program')}>WORKOUT</Button>
+          <Button onPress={() => handleNavigate('History')}>HISTORY</Button>
         </View>
       </View>
     </View>
